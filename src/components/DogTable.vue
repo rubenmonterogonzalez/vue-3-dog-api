@@ -13,7 +13,14 @@ const props = defineProps({
         <p>Oops! Error encountered: {{ error.message }}</p>
     </div>
     <div v-else-if="data">
-        <div v-for="breed in data" :key="breed.id">{{ breed.name }}</div>
+        <ul v-for="breed in data" :key="breed.id">
+            <li>
+                {{ breed.name }}
+                {{breed.temperament}}
+                {{breed.origin}}
+                {{breed.image.url}}
+            </li>
+        </ul>
     </div>
     <div v-else>Loading...</div>
 </template>
